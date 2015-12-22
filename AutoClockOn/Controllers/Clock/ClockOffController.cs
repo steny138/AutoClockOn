@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AutoClockOn.Controllers
+namespace AutoClockOn.Web.Controllers
 {
     public class ClockOffController : Controller
     {

@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace AutoClockOn
+
+namespace AutoClockOn.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -13,6 +14,7 @@ namespace AutoClockOn
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            AutofacConfig.Bootstrapper();
         }
     }
 }

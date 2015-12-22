@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AutoClockOn.ViewModel
 {
-    class ClockOffViewModel
+    public class ClockOffViewModel
     {
+       
     }
 }

@@ -1,0 +1,19 @@
+﻿@model AutoClockOn.ViewModel.ClockOnViewModel
+
+@{
+    ViewBag.Title = "Staff";
+}
+
+<h2>Staff</h2>
+<h3>Key in your staff code </h3>
+
+@using (Html.BeginForm())
+{ 
+    <p><input type="text" id="id" name="id" class ="form-control" /></p>
+    <p><input class="btn btn-info" type="submit" value="送出"/></p>
+}
+
+<script type="text/javascript">
+    document.getElementById("id").focus();
+</script>
+
