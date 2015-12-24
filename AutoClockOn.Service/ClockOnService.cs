@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoClockOn.Utility;
 using AutoClockOn.ViewModel;
 using LINQtoCSV;
 using OpenQA.Selenium;
@@ -64,18 +65,7 @@ namespace AutoClockOn.Service
         /// <returns>符合的員工</returns>
         private Staff FindMatchStaffs(string id)
         {
-            //讀取員工檔
-            CsvFileDescription inputFileDescription = new CsvFileDescription
-            {
-                SeparatorChar = ',',
-                FirstLineHasColumnNames = false,
-                EnforceCsvColumnAttribute = true
-            };
-
-            CsvContext cc = new CsvContext();
-            //將CSV檔案轉成物件
-            IEnumerable<Staff> staffs =
-                cc.Read<Staff>(ConfigurationManager.AppSettings["StaffFilePath"], inputFileDescription);
+            var staffs = CsvHelper.ReadStaffFile();
 
             var matchStaff = staffs.Where(x => x.id == id).FirstOrDefault();
 

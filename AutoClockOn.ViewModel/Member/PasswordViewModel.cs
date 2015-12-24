@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoClockOn.Utility
+namespace AutoClockOn.ViewModel.Member
 {
-    public class Class1
+    public class PasswordViewModel
     {
     }
 }

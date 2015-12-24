@@ -6,11 +6,11 @@ using System.Web.Mvc;
 
 namespace AutoClockOn.Web.Controllers.Member
 {
-    public class EditController : Controller
+    public partial class MemberController : Controller
     {
         //
         // GET: /Edit/
-        public ActionResult Index()
+        public ActionResult Edit()
         {
             return View();
         }

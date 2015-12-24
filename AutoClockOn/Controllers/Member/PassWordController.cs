@@ -6,11 +6,11 @@ using System.Web.Mvc;
 
 namespace AutoClockOn.Web.Controllers.Member
 {
-    public class PassWordController : Controller
+    public partial class MemberController : Controller
     {
         //
         // GET: /PassWord/
-        public ActionResult Index()
+        public ActionResult PassWord()
         {
             return View();
         }

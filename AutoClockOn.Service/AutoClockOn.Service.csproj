@@ -63,6 +63,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AutoClockOn.Utility\AutoClockOn.Utility.csproj">
+      <Project>{53113b9b-206e-4eaf-ac7e-dfc8a5dda3c5}</Project>
+      <Name>AutoClockOn.Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AutoClockOn.ViewModel\AutoClockOn.ViewModel.csproj">
       <Project>{20f39dec-770a-4a40-85bb-fcbc655e54b9}</Project>
       <Name>AutoClockOn.ViewModel</Name>
