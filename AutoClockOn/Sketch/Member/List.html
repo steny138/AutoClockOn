@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../../Content/bootstrap.css ">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>員工清單</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>員工清單</h1>
+        <form action="Add.html" id="mainForm">
+        </form>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>序號</th>
+                    <th>員編</th>
+                    <th>狀態</th>
+                    <th>密碼</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#">B401</a></td>
+                    <td>b4****n</td>
+                    <td>啟用</td>
+                </tr>
+                <tr class="danger">
+                    <td>2</td>
+                    <td><a href="#">D051</a></td>
+                    <td>ad*****n</td>
+                    <td>停用</td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="text-right">
+                <button id="btn_submit" type="button" class="btn btn-success" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    新增
+                </button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="../../Scripts//jquery-1.10.2.js"></script>
+</body>
+
+</html>
