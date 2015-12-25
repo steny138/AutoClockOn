@@ -28,5 +28,10 @@ namespace AutoClockOn.Utility
 
             return staffs;
         }
+
+        public static void AddStaffToFile(Staff staff)
+        {
+
+        }
     }
 }

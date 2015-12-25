@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoClockOn.Service
+namespace AutoClockOn.Utility
 {
-    class ClockOffService
+    public class Utility
     {
+        
     }
 }

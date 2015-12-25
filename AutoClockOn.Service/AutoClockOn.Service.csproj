@@ -49,8 +49,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClockOffService.cs" />
-    <Compile Include="ClockOnService.cs" />
+    <Compile Include="Clock\ClockOnService.cs" />
+    <Compile Include="Member\MemberService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

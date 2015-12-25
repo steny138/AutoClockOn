@@ -1,11 +1,11 @@
-﻿@model AutoClockOn.ViewModel.Member.AddViewModel
+﻿@model AutoClockOn.ViewModel.Member.EditViewModel
 
 @{
-    ViewBag.Title = "新增員工";
+    ViewBag.Title = "維護員工";
 }
 
-<h1>新增員工</h1>
-<form action="Add" id="mainForm" class="form-horizontal" method="post">
+<h1>維護員工</h1>
+<form action="add.html" id="mainForm" class="form-horizontal">
     <div class="form-group">
         <label for="account" class="col-sm-2 control-label">員工編號</label>
         <div class="col-sm-10">
@@ -15,26 +15,32 @@
     <div class="form-group">
         <label for="password" class="col-sm-2 control-label">密碼</label>
         <div class="col-sm-10">
-
-            <input type="password" class="form-control" id="password" name="password" placeholder="請輸入erp密碼" />
+            <input type="text" class="form-control" id="password" name="password" placeholder="若要修改密碼則輸入否則為空" />
         </div>
     </div>
     <div class="form-group">
         <label for="repassword" class="col-sm-2 control-label">再輸入密碼</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="repassword" name="repassword" placeholder="請再次確認密碼" />
+            <input type="text" class="form-control" id="repassword" name="repassword" placeholder="請再次確認密碼" />
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label"></label>
         <div class="col-sm-10">
-            <button id="btn_submit" type="submit" class="btn btn-success btn-lg" aria-label="Left Align">
+            <div class="checkbox input-lg">
+                <label>
+                    <input type="checkbox" />作廢</label></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <button id="btn_submit" type="button" class="btn btn-success btn-lg" aria-label="Left Align">
                 <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
                 存檔
             </button>
             <button id="btn_cancel" type="button" class="btn btn-danger btn-lg">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                取消
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>取消
             </button>
         </div>
     </div>

@@ -103,8 +103,11 @@
       <Link>chromedriver.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Images\icon2_114.png" />
     <Content Include="Content\Images\icon_114.png" />
     <Content Include="Content\Site.css" />
@@ -113,6 +116,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\css\bootstrap-theme.css.map" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\clockon.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -133,9 +141,8 @@
     <Compile Include="Controllers\Clock\ClockOffController.cs" />
     <Compile Include="Controllers\Clock\ClockOnController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
-    <Compile Include="Controllers\Member\AddController.cs" />
-    <Compile Include="Controllers\Member\EditController.cs" />
-    <Compile Include="Controllers\Member\PassWordController.cs" />
+    <Compile Include="Controllers\Member\MemberController.cs" />
+    <Compile Include="Extensions\ControllerExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +161,7 @@
     <Content Include="Views\ClockOn\Staff.cshtml" />
     <Content Include="Views\Member\Add.cshtml" />
     <Content Include="Views\Member\List.cshtml" />
+    <Content Include="Views\Member\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -164,6 +172,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\List\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutoClockOn.Service\AutoClockOn.Service.csproj">
@@ -192,7 +201,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>44747</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:13165/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

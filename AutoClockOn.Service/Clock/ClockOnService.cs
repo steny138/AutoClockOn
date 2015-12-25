@@ -11,7 +11,7 @@ using LINQtoCSV;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace AutoClockOn.Service
+namespace AutoClockOn.Service.Clock
 {
    public  interface IClockOnService
     {

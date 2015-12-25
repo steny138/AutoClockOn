@@ -13,5 +13,9 @@ namespace AutoClockOn.ViewModel
         public string id { get; set; }
         [CsvColumn(FieldIndex = 2, CanBeNull = true)]
         public string password { get; set; }
+        [CsvColumn(FieldIndex = 3, CanBeNull = true)]
+        public DateTime? mdate { get; set; }
+        [CsvColumn(FieldIndex = 4, CanBeNull = true)]
+        public bool isDisabled { get; set; }
     }
 }
