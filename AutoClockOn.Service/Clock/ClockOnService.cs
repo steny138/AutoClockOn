@@ -10,6 +10,7 @@ using AutoClockOn.ViewModel;
 using LINQtoCSV;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
 
 namespace AutoClockOn.Service.Clock
 {
@@ -20,10 +21,11 @@ namespace AutoClockOn.Service.Clock
 
     public class ClockOnService:IClockOnService
     {
+		private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        #region IClockOnService 成員
+		#region IClockOnService 成員
 
-        public bool ClockOn(string id)
+		public bool ClockOn(string id)
         {
             try
             {
@@ -31,28 +33,40 @@ namespace AutoClockOn.Service.Clock
 
                 if (staff != null)
                 {
+					using (IWebDriver driver = new ChromeDriver())
+					{
+						try
+						{
+							driver.Navigate().GoToUrl("http://erp.liontravel.com");
+							driver.FindElement(By.Name("sStfn")).Clear();
+							driver.FindElement(By.Name("sStfn")).SendKeys(staff.id);
+							driver.FindElement(By.Name("sPswd")).Clear();
+							driver.FindElement(By.Name("sPswd")).SendKeys(staff.password);
+							driver.FindElement(By.Name("btn_login")).Click();
+							//driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+							driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
+							//driver.FindElementByLinkText("打卡").SendKeys(Keys.Delete);
+							//driver.FindElementByLinkText("打卡").Click();
+							driver.Navigate().GoToUrl("http://erp.liontravel.com/PS/pspr00.asp");
+							driver.FindElement(By.Name("sStfnPassword")).SendKeys(staff.id + staff.password);
+							driver.FindElement(By.Name("btnFirst")).Click();
+							driver.Dispose();
+						}
+						catch (Exception ex)
+						{
+							logger.Warn(ex, "Got exception With Clock on Webdirver.");
 
-                    using (ChromeDriver driver = new ChromeDriver())
-                    {
-                        driver.Navigate().GoToUrl("http://erp.liontravel.com");
-                        driver.FindElement(By.Name("sStfn")).Clear();
-                        driver.FindElement(By.Name("sStfn")).SendKeys(staff.id);
-                        driver.FindElement(By.Name("sPswd")).Clear();
-                        driver.FindElement(By.Name("sPswd")).SendKeys(staff.password);
-                        driver.FindElement(By.Name("btn_login")).Click();
-                        driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-                        driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
-                        driver.FindElementByLinkText("打卡").SendKeys(Keys.Delete);
-                        driver.FindElementByLinkText("打卡").Click();
-                        driver.FindElement(By.Name("sStfnPassword")).SendKeys(staff.id + staff.password);
-                        driver.FindElement(By.Name("btnFirst")).Click();
-                    }
+							throw ex;
+						}
+					}
                     return true;
                 }
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                throw new Exception("打卡失敗!");
+				logger.Warn(ex, "Got exception With Clock on.");
+
+				throw ex;
             }
 
             return false;
